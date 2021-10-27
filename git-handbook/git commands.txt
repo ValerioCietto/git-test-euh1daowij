@@ -3,5 +3,12 @@ git status
 git config --global user.name "name"
 git config --global user.email "email@email"
 git remote add origin http://remoterepo 
+git log --oneline --graph --decorate
+lista dei log
 
-wewewqeweqw
+git remote update origin --prune
+cancella branch remote che sono stati cancellati
+
+
+
+
