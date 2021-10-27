@@ -1,0 +1,5 @@
+git init 
+git status 
+git config --global user.name "name"
+git config --global user.email "email@email"
+git remote add origin http://remoterepo 
