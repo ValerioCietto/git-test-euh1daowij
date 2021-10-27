@@ -9,6 +9,7 @@ lista dei log
 git remote update origin --prune
 cancella branch remote che sono stati cancellati
 
-
+git checkout branch-name 
+cambia branch
 
 
