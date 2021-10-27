@@ -1,0 +1,37 @@
+<!--test url
+http://localhost/test-project/validation/validation.html#
+-->
+<html>
+    <head>
+        
+        <script src="lib/angular.min.js"></script>
+        <link href="lib/angular-csp.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+        <script src="validation.js"></script>
+        
+    </head>
+    <body>
+<div ng-app="validationAndBinding" ng-controller="usersController">
+<div ng-custom-test ></div>
+ Cerca un utente: <input type="text" ng-model="search" /><br><br>
+ <form name="myForm">
+<div ng-hide="editedUser.name == ''">
+ Edita nome: <input type="text" name="userName" ng-model="editedUser.name" required>
+ <span class="error" ng-show="myForm.userName.$error.required">Scrivi il nuovo username</span>
+ <input type="button" ng-hide="myForm.userName.$error.required" ng-click="save(editedUser)" value="Salva Utente"/>
+</div>
+</form>
+ <ul id="utenti" ng-custom-hover="#f00">
+    <li ng-repeat="u in users | orderBy : 'name' | filter : search">
+        <a href="#" ng-click="edit(u)">{{u.name}} - {{u.email}}</a>
+    </li>
+    </ul>
+</div>
+
+</body>
+
+</html>

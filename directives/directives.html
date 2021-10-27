@@ -1,0 +1,29 @@
+<!--test url
+http://localhost/test-project/directives/directives.html#
+-->
+<html>
+    <head>
+        
+        <script src="lib/angular.min.js"></script>
+        <link href="lib/angular-csp.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+        <script src="directives.js"></script>
+        
+    </head>
+    <body>
+<div ng-app="directives" ng-controller="directivesController">
+<div ng-custom-test ></div>
+<span ng-custom-hover="f00">test</span>
+
+    Cerca un utente: <input type="text" ng-model="search" />
+       <ul>
+        <li ng-repeat="u in users | orderBy : 'name' | filter : search">{{u.name}} - {{u.email}}</li>
+       </ul>
+   </div>
+</body>
+
+</html>

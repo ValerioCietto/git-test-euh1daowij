@@ -1,0 +1,33 @@
+<html>
+    <head>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular-csp.css" rel="stylesheet" type="text/css">
+        <script src="angular.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+       
+
+        <div ng-app="bankApp">
+            <input type="checkbox" ng-click="submitted=!submitted" />
+            <div ng-show="submitted" ng-controller="balancesController">
+            <ul >
+              <li ng-repeat="user in users | orderBy: 'balance'">
+                {{user.id}}:{{user.name}} - {{user.balance | currency}}
+                <a href="#" ng-click="remove(user)">Delete</a>
+                <a href="#" ng-click="edit(user)">Edit</a>
+              </li>
+              
+            </ul>
+            <input type="text" id="name" value="{{current.name}}" ng-model="current.name" placeholder="insert name">
+            <input type="number" id="balance" value="{{current.balance}}" ng-model="current.balance" placeholder="insert balance">
+            <button ng-click="addNew(current)">Add New user</button>
+            <button ng-click="save(current)">Save</button>
+
+            
+            </div>
+          </div>
+    </body>
+
+</html>

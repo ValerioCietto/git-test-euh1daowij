@@ -1,0 +1,22 @@
+<!--test url
+http://localhost/test-project/http/default.html#
+-->
+<html>
+    <head>
+        
+        <script src="lib/angular.min.js"></script>
+        <link href="lib/angular-csp.css" rel="stylesheet" type="text/css">
+        <script src="controller.js"></script>
+       
+    </head>
+    <body>
+<div ng-app="httpApp" ng-controller="httpController">
+ Cerca un utente: <input type="text" ng-model="search" />
+    <ul>
+     <li ng-repeat="u in users | orderBy : 'name' | filter : search">{{u.name}} - {{u.email}}</li>
+    </ul>
+</div>
+
+</body>
+
+</html>
