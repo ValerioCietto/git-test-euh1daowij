@@ -1,0 +1,35 @@
+<!--test url
+http://localhost/test-project/posts/posts.html#
+-->
+<html>
+    <head>
+        
+        <script src="lib/angular.min.js"></script>
+        <link href="lib/angular-csp.css" rel="stylesheet" type="text/css">
+        <script src="posts.js"></script>
+       
+    </head>
+    <body>
+<div ng-app="filterApp" ng-controller="httpController">
+    <select ng-model="posting" ng-change="handleChange(posting)">
+        
+        <option ng-repeat="post in posts"
+        value="{{post.id}}"
+        >{{post.id + " . " + post.title}}
+
+        </option>
+    </select>
+    <div>
+        {{post_body}}
+    </div>
+    <ul>
+        <li ng-repeat="c in comments">
+            {{c.email}}<br>
+            {{c.body}}
+            <br><br>
+        </li>
+    </ul>
+</div>
+</body>
+
+</html>
