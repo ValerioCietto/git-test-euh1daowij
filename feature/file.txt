@@ -1,2 +1,3 @@
 feature
 feature 2
+conflict
