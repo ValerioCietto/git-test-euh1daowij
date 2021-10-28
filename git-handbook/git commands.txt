@@ -15,5 +15,20 @@ cambia branch
 git checkout -b simple-changes
 crea un nuovo branch e cambia su esso
 
+il branch di lavoro deve iniziare con il nome del task, es. MN-XYZ per i task di Motion Next (V3) e deve essere rigorosamente forkato dall'ultima versione di develop, cioè
+
+git checkout develop
+git pull origin develop # o lo fai da vscode usando le freccine circolari
+git checkout -b "MN-XYZ-..." # o lasci che lo faccia l'estensione per te
+Questo vale anche per le modifiche ai sottomoduli motion-chat e motion-client, anche essi hanno il branch develop etc.
+
+Generalmente preferiamo commenti nel codice e commit message in inglese. Così come di solito è in inglese il titolo dei task su Jira. La descrizione del task va bene anche in italiano invece, se capita in inglese è perché è da qualche ticket di clienti stranieri
+
+Per la Merge Request sarà importantissimo mettere, nella descrizione:
+Titolo parlante (o == task su Jira)
+il link al task su Jira
+delle note implementative (anche in italiano) dove si descrivono brevemente le modifiche fatte e perché (ovviamente a seconda della complessità: es. se hai cambiato una singola regola css non è che ci sia troppo da scrivere) ed eventuali rimandi a documentazione extra o esterna
+Quando chiudi il task su Jira, mettendolo in test, puoi copiare le stesse note implementative o aggiungere il link alla MR
+
 
 
